@@ -319,11 +319,12 @@ public class ArgMusicService extends Service implements MediaPlayer.OnPreparedLi
     }
     @Override public void onPrepared(MediaPlayer mp){
         if(currentAudio==null) return;
-        if(currentAudio.getType() != URL){
+         // waiting a lot... 
+        //if(currentAudio.getType() != URL){
             onPlayingListener.onPlaying();
             startMediaPlayer();
             updateTimeThread();
-        }
+        //}
         onPreparedListener.onPrepared(currentAudio,mediaPlayer.getDuration());
     }
     @Override public void onCompletion(MediaPlayer mp) {
